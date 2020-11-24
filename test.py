@@ -1,6 +1,10 @@
 #! /usr/bin/env python
 
 from subprocess import run
+from os.path import basename
+
+
+NOTIFICATION_TIME = 3000    # ms
 
 question = "What's up dude? "
 choices = {
@@ -21,8 +25,10 @@ if result.returncode == 0:
         print("Good choice: Let's do this!")
         result = run(choices[chosen], shell=True)
     else:
-        # TODO: Notify user of invalid choice. Get rid of print()
-        print("Invalid choice")
+        notify_cmd = "notify-send -u low -t {:d} '{}' " \
+                     "'You made an invalid choice!'".format(
+                     NOTIFICATION_TIME, basename(__file__))
+        run(notify_cmd, shell=True)
 else:
     # TODO: Notify user of dmenu error code. Get rid of print()
     print("Something when wrong")

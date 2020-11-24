@@ -30,6 +30,7 @@ if result.returncode == 0:
                      NOTIFICATION_TIME, basename(__file__))
         run(notify_cmd, shell=True)
 else:
-    # TODO: Notify user of dmenu error code. Get rid of print()
-    print("Something when wrong")
+    # The user quite dmenu by pressing <esc>, don't do anyhting, probably no
+    # action is wanted. Especially don't send an annoying notification.
+    pass
 

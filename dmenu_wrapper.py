@@ -17,20 +17,23 @@ NOTIFICATION_TIME = 3000    # ms
 # function definitions
 # -----------------------------------------------------------------------------
 
-def run_dmenu(prompt, choices, script_name=None):
+def promt_user(prompt, choices):
     dmenu_choices = "\n".join(choices.keys())
     dmenu_cmd = 'echo -e "{}" | dmenu -i -l {:d} -p "{}"'.format(
             dmenu_choices, len(choices), prompt
     )
 
+    return run(dmenu_cmd, shell=True, capture_output=True)
+
+
+def act_on_users_decision(choices, decision):
     success = False
-    result = run(dmenu_cmd, shell=True, capture_output=True)
-    if result.returncode == 0:
-        chosen = result.stdout.decode("utf-8").rstrip()
+    if decision.returncode == 0:
+        chosen = decision.stdout.decode("utf-8").rstrip()
 
         if chosen in choices.keys():
             success = True
-            result = run(choices[chosen], shell=True)
+            decision = run(choices[chosen], shell=True)
         else:
             script = script_name
             if script == None:
@@ -47,4 +50,9 @@ def run_dmenu(prompt, choices, script_name=None):
         pass
 
     return success
+
+
+def run_dmenu(prompt, choices, script_name=None):
+    decision = promt_user(prompt, choices)
+    return act_on_users_decision(choices, decision)
 

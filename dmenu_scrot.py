@@ -14,11 +14,14 @@ import os
 # -----------------------------------------------------------------------------
 
 NOTIFICATION_TIME = 3000    # ms
+
 IMG_DIR = "$XDG_PICTURES_DIR/screenshots"
 IMG_NAME = "scrot_%Y-%m-%d_%H-%M-%S.png"
 IMG_PATH = os.path.join(IMG_DIR, IMG_NAME)
+
 FULLSCREEN_NOTIFICATION = "Fullscreen taken and saved"
 SECTION_NOTIFICATION = "Scetion screenshot taken and saved"
+
 COMMAND_TEMPLATE = "scrot -z {} {} && " \
                    "notify-send -u low -t {} 'Scrot' '{}'".format(
                         "{}", IMG_PATH, NOTIFICATION_TIME, "{}"

@@ -14,10 +14,10 @@ NOTIFICATION_TIME = 3000    # ms
 
 
 # -----------------------------------------------------------------------------
-# function definitions
+# helper function definitions
 # -----------------------------------------------------------------------------
 
-def promt_user(prompt, choices):
+def _promt_user(prompt, choices):
     dmenu_choices = "\n".join(choices.keys())
     dmenu_cmd = 'echo -e "{}" | dmenu -i -l {:d} -p "{}"'.format(
             dmenu_choices, len(choices), prompt
@@ -26,7 +26,7 @@ def promt_user(prompt, choices):
     return run(dmenu_cmd, shell=True, capture_output=True)
 
 
-def act_on_users_decision(choices, decision):
+def _act_on_users_decision(choices, decision):
     success = False
     if decision.returncode == 0:
         chosen = decision.stdout.decode("utf-8").rstrip()
@@ -52,7 +52,11 @@ def act_on_users_decision(choices, decision):
     return success
 
 
+# -----------------------------------------------------------------------------
+# api function definitions
+# -----------------------------------------------------------------------------
+
 def run_dmenu(prompt, choices, script_name=None):
-    decision = promt_user(prompt, choices)
-    return act_on_users_decision(choices, decision)
+    decision = _promt_user(prompt, choices)
+    return _act_on_users_decision(choices, decision)
 

@@ -16,7 +16,7 @@ from subprocess import run
 
 LAYOUT_SCRIPTS_DIR = "~/workspaces/screenlayouts"
 
-layout_script_paths = [
+LAYOUT_SCRIPT_PATHS = [
     os.path.join(LAYOUT_SCRIPTS_DIR, "docked.sh"),
     os.path.join(LAYOUT_SCRIPTS_DIR, "mobile.sh"),
     os.path.join(LAYOUT_SCRIPTS_DIR, "one_external.sh"),
@@ -29,9 +29,9 @@ layout_script_paths = [
 
 prompt = "Change monitor settiong to: "
 choices = {
-    "1. docked": layout_script_paths[0],
-    "2. mobile": layout_script_paths[1],
-    "3. one external": layout_script_paths[2],
+    "1. docked": LAYOUT_SCRIPT_PATHS[0],
+    "2. mobile": LAYOUT_SCRIPT_PATHS[1],
+    "3. one external": LAYOUT_SCRIPT_PATHS[2],
 }
 
 

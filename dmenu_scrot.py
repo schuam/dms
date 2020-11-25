@@ -1,9 +1,17 @@
 #! /usr/bin/env python
 
+# -----------------------------------------------------------------------------
+# includes
+# -----------------------------------------------------------------------------
+
 from os.path import basename
 import os
 from dmenu_wrapper import run_dmenu
 
+
+# -----------------------------------------------------------------------------
+# constants
+# -----------------------------------------------------------------------------
 
 NOTIFICATION_TIME = 3000    # ms
 IMG_DIR = "$XDG_PICTURES_DIR/screenshots"
@@ -16,6 +24,11 @@ COMMAND_TEMPLATE = "scrot -z {} {} && " \
                         "{}", IMG_PATH, NOTIFICATION_TIME, "{}"
 )
 
+
+# -----------------------------------------------------------------------------
+# setup prompt and choices
+# -----------------------------------------------------------------------------
+
 prompt = "Screenshot will be saved in {}: ".format(IMG_DIR)
 choices = {
     "1. quick fullscreen": \
@@ -25,6 +38,11 @@ choices = {
     "3. selection": \
             COMMAND_TEMPLATE.format("-s ", SECTION_NOTIFICATION),
 }
+
+
+# -----------------------------------------------------------------------------
+# action
+# -----------------------------------------------------------------------------
 
 run_dmenu(prompt, choices, basename(__file__))
 

@@ -6,7 +6,7 @@ from dmenu_wrapper import run_dmenu
 from subprocess import run
 
 
-LAYOUT_SCRIPTS_DIR = "~/.dotfiles/.screenlayout"
+LAYOUT_SCRIPTS_DIR = "~/workspaces/screenlayouts"
 
 layout_script_paths = [
     os.path.join(LAYOUT_SCRIPTS_DIR, "docked.sh"),

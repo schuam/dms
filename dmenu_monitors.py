@@ -4,10 +4,10 @@
 # includes
 # -----------------------------------------------------------------------------
 
-from os.path import basename
-import os
 from dmenu_wrapper import run_dmenu
+
 from subprocess import run
+import os
 
 
 # -----------------------------------------------------------------------------
@@ -39,6 +39,6 @@ choices = {
 # action
 # -----------------------------------------------------------------------------
 
-if (run_dmenu(prompt, choices, basename(__file__))):
+if (run_dmenu(prompt, choices, os.path.basename(__file__))):
     run("qtile-cmd -o cmd -f restart", shell=True)
 

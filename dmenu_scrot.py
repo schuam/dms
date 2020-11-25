@@ -4,9 +4,9 @@
 # includes
 # -----------------------------------------------------------------------------
 
-from os.path import basename
-import os
 from dmenu_wrapper import run_dmenu
+
+import os
 
 
 # -----------------------------------------------------------------------------
@@ -44,5 +44,5 @@ choices = {
 # action
 # -----------------------------------------------------------------------------
 
-run_dmenu(prompt, choices, basename(__file__))
+run_dmenu(prompt, choices, os.path.basename(__file__))
 

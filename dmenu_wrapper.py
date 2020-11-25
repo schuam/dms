@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 from subprocess import run
-from os.path import basename
+import os
 
 
 # -----------------------------------------------------------------------------
@@ -34,7 +34,7 @@ def run_dmenu(prompt, choices, script_name=None):
         else:
             script = script_name
             if script == None:
-                script = basename(__file__)
+                script = os.path.basename(__file__)
 
             notify_cmd = "notify-send -u low -t {:d} '{}' " \
                         "'You made an invalid choice!'".format(

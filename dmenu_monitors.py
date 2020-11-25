@@ -3,6 +3,7 @@
 from os.path import basename
 import os
 from dmenu_wrapper import run_dmenu
+from subprocess import run
 
 
 LAYOUT_SCRIPTS_DIR = "~/.dotfiles/.screenlayout"
@@ -20,5 +21,6 @@ choices = {
     "3. one external": layout_script_paths[2],
 }
 
-run_dmenu(question, choices, basename(__file__))
+if (run_dmenu(question, choices, basename(__file__))):
+    run("qtile-cmd -o cmd -f restart", shell=True)
 

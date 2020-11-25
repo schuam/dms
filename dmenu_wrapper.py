@@ -57,6 +57,28 @@ def _act_on_users_decision(choices, decision):
 # -----------------------------------------------------------------------------
 
 def run_dmenu(prompt, choices, script_name=None):
+    """
+    Ask user what to do and do it.
+
+    This is a wrapper around dmenu. It runs dmenu with the passed in prompt and
+    choices (menu entries) and afterwards executes what the user wants.
+
+    Keyword arguments:
+    prompt :      String that will be used in dmenu as the user prompt
+    choices :     A python dictonary that has the possible choices. The keys
+                  must be strings. These strings will be presented to the user
+                  as choices to chose from. The values of the dictonary must
+                  also be strings. These scrings must either be a command (or a
+                  series of commands, that can be run in a shell, or a script
+                  that can be run in a shell and is callable (either the
+                  absolut path to the script or the name of a script, that is
+                  located in the users PATH.
+    script_name : The name of the calling script. This is used in case the user
+                  puts in something into dmenu that is not a valid choice. In
+                  this case a notification is issued that has shows the
+                  **script_name**. If no script_name is passed, the name of
+                  this very file is used instead.
+    """
     decision = _promt_user(prompt, choices)
     return _act_on_users_decision(choices, decision)
 

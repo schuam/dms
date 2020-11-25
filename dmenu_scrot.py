@@ -16,7 +16,7 @@ COMMAND_TEMPLATE = "scrot -z {} {} && " \
                         "{}", IMG_PATH, NOTIFICATION_TIME, "{}"
 )
 
-question = "Screenshot will be saved in {}: ".format(IMG_DIR)
+prompt = "Screenshot will be saved in {}: ".format(IMG_DIR)
 choices = {
     "1. quick fullscreen": \
             COMMAND_TEMPLATE.format("-d 1", FULLSCREEN_NOTIFICATION),
@@ -26,5 +26,5 @@ choices = {
             COMMAND_TEMPLATE.format("-s ", SECTION_NOTIFICATION),
 }
 
-run_dmenu(question, choices, basename(__file__))
+run_dmenu(prompt, choices, basename(__file__))
 

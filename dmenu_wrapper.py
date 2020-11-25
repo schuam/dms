@@ -4,10 +4,10 @@ from os.path import basename
 
 NOTIFICATION_TIME = 3000    # ms
 
-def run_dmenu(question, choices, script_name=None):
+def run_dmenu(prompt, choices, script_name=None):
     dmenu_choices = "\n".join(choices.keys())
     dmenu_cmd = 'echo -e "{}" | dmenu -i -l {:d} -p "{}"'.format(
-            dmenu_choices, len(choices), question
+            dmenu_choices, len(choices), prompt
     )
 
     success = False

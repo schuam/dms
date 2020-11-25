@@ -14,13 +14,13 @@ layout_script_paths = [
     os.path.join(LAYOUT_SCRIPTS_DIR, "one_external.sh"),
 ]
 
-question = "Change monitor settiong to: "
+prompt = "Change monitor settiong to: "
 choices = {
     "1. docked": layout_script_paths[0],
     "2. mobile": layout_script_paths[1],
     "3. one external": layout_script_paths[2],
 }
 
-if (run_dmenu(question, choices, basename(__file__))):
+if (run_dmenu(prompt, choices, basename(__file__))):
     run("qtile-cmd -o cmd -f restart", shell=True)
 

@@ -31,14 +31,21 @@ I wrote a simple wrapper around dmenu in python. You can check it out
 run_dmenu(prompt, choises, script_name=None)
 ```
 
-Now I can write very simple python dmenu scripts. All I have to do is define
-the prompt (as a string):
+Now I can write very simple python dmenu scripts. All I have to do is:
+
+- import the wrapper function
+
+```python
+from dmenu_wrapper import run_dmenu
+```
+
+- define the prompt (as a string):
 
 ```python
 prompt = "Say hello to: "
 ```
 
-and the choices the user may chose from (as a dictionary):
+- and the choices the user may chose from (as a dictionary):
 
 ```python
 choices = {
@@ -47,7 +54,7 @@ choices = {
 }
 ```
 
-The only step left is call the wrapper function:
+- and finally call the wrapper function:
 
 ```python
 run_dmenu(prompt, choices, "example")

@@ -31,7 +31,15 @@ I wrote a simple wrapper around dmenu in python. You can check it out
 run_dmenu(prompt, choises, script_name=None)
 ```
 
-Now I can write very simple python dmenu scripts. All I have to do is:
+Now I can use this wrapper to write very simple dmenu scripts in python. Here
+is an example. This example will write a simple text file in your home
+directory with different text in it, depending on which option you chose in
+dmenu.
+
+**Warning**: In case you have a file called "example.txt" in your home
+directory, it will be overwritten, when running this example.
+
+All right, all that is needed is:
 
 - import the wrapper function
 

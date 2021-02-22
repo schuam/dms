@@ -26,7 +26,6 @@ choices = {
 # action
 # -----------------------------------------------------------------------------
 
-if (run_dmenu(prompt, choices, os.path.basename(__file__))):
-    run("qtile-cmd -o cmd -f restart", shell=True)
+run_dmenu(prompt, choices, os.path.basename(__file__))
 
 

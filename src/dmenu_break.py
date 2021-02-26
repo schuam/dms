@@ -15,7 +15,7 @@ import os
 
 prompt = "Take a break: "
 choices = {
-    "1. quite qtile": "qtile-cmd -o cmd -f shutdown",
+    "1. quite qtile": "qtile cmd-obj -o cmd -f shutdown",
     "2. sleep": "systemctl suspend",
     "3. shutdown": "systemctl poweroff",
     "4. reboot": "systemctl reboot",

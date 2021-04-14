@@ -1,7 +1,16 @@
 # dms (dmenu scripts)
 
-This repo contains a wrapper around [dmenu](https://tools.suckless.org/dmenu/)
-and my collection of dmenu scripts. Everything written in python.
+This repo contains my [dmenu](https://tools.suckless.org/dmenu/) scripts. So
+far, one is written in bash (there might be more in the future), all the rest
+is written in python. For the pythons scipts, I have written a nice little
+wrapper that makes it easy to write new scripts. I started this repo for that
+wrapper and the other python scripts, but at some point I needed a script that
+didn't fit into the shema that the wrapper was designed for. I still wanted to
+keep all my dmenu scripts in one place. Therefore, there are not only python
+scripts, but also (a) bash script(s) in this repo.
+
+The rest of this README file talks about the pythons wrapper/scripts. The bash
+script is so simple, it does need further explanations.
 
 
 ## Background
@@ -25,7 +34,8 @@ should be taken.
 ## Solution
 
 I wrote a simple wrapper around dmenu in python. You can check it out
-[here](./src/dmenu_wrapper.py). It contains a function with three arguments:
+[here](./src/python/dmenu_wrapper.py). It contains a function with three
+arguments:
 
 ```python
 run_dmenu(prompt, choises, script_name=None)
@@ -68,7 +78,7 @@ choices = {
 run_dmenu(prompt, choices, "example")
 ```
 
-Check out the whole example [here](./src/dmenu_example.py).
+Check out the whole example [here](./src/python/dmenu_example.py).
 
 
 ## Requirements

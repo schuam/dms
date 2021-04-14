@@ -7,9 +7,9 @@ and my collection of dmenu scripts. Everything written in python.
 ## Background
 
 A little while ago I came across dmenu and started using it as my default
-application launcher. But actually you can do more with it, than just
-launching programs. It's actually a 'dynamic menu', which allows you to present
-a prompt to the user and let them select an one option from a list of choices.
+application launcher. But actually you can do more with it than just
+launching programs. It's actually a 'dynamic menu' which allows you to present
+a prompt to the user and let them select an option from a list of choices.
 Once the user has made a decision, some action depending on the users decision
 can be triggered. In order to realize such a menu, you have to write a dmenu
 script.

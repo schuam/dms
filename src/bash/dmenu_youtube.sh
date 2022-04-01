@@ -21,7 +21,7 @@
 # constants
 # -----------------------------------------------------------------------------
 
-PLAYLIST_PATH="$HOME/multimedia/music/playlists/youtube.csv"
+PLAYLIST_PATH="$HOME/multimedia/music/playlists/youtube_playlists.csv"
 
 
 # -----------------------------------------------------------------------------

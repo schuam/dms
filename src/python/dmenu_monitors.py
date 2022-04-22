@@ -14,7 +14,7 @@ import os
 # constants
 # -----------------------------------------------------------------------------
 
-LAYOUT_SCRIPTS_DIR = "~/workspaces/screenlayouts"
+LAYOUT_SCRIPTS_DIR = "~/.local/share/screenlayouts"
 
 LAYOUT_SCRIPT_PATHS = [
     os.path.join(LAYOUT_SCRIPTS_DIR, "laptop.sh"),

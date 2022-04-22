@@ -90,7 +90,8 @@ $(SYM_LINKS_PYTHON): $(INSTALLED_SCRIPTS) | $(INSTALL_DIR_BIN)
 .PHONY: uninstall
 uninstall:
 	rm -rf $(INSTALL_DIR_SCRIPTS)
-	rm -f $(SYM_LINKS)
+	rm -f $(SYM_LINKS_BASH)
+	rm -f $(SYM_LINKS_PYTHON)
 
 
 # -----------------------------------------------------------------------------

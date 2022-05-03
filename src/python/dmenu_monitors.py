@@ -6,7 +6,7 @@
 
 from dmenu_wrapper import run_dmenu
 
-from subprocess import run
+from socket import gethostname
 import os
 
 
@@ -14,15 +14,16 @@ import os
 # constants
 # -----------------------------------------------------------------------------
 
+HOSTNAME = gethostname()
 LAYOUT_SCRIPTS_DIR = "~/.local/share/screenlayouts"
 
 LAYOUT_SCRIPT_PATHS = [
-    os.path.join(LAYOUT_SCRIPTS_DIR, "laptop.sh"),
-    os.path.join(LAYOUT_SCRIPTS_DIR, "laptop_plus_one_external.sh"),
-    os.path.join(LAYOUT_SCRIPTS_DIR, "laptop_plus_two_external.sh"),
-    os.path.join(LAYOUT_SCRIPTS_DIR, "laptop_plus_mirror.sh"),
-    os.path.join(LAYOUT_SCRIPTS_DIR, "one_external.sh"),
-    os.path.join(LAYOUT_SCRIPTS_DIR, "two_external.sh"),
+    os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-0.sh".format(HOSTNAME)),
+    os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-1.sh".format(HOSTNAME)),
+    os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-2.sh".format(HOSTNAME)),
+    os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-1_mirror.sh".format(HOSTNAME)),
+    os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-0_external-1.sh".format(HOSTNAME)),
+    os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-0_external-2.sh".format(HOSTNAME)),
 ]
 
 
@@ -46,4 +47,7 @@ choices = {
 # -----------------------------------------------------------------------------
 
 if (run_dmenu(prompt, choices, os.path.basename(__file__))):
-    run("qtile cmd-obj -o cmd -f restart", shell=True)
+    if os.system("ps -e | grep xmonad") == 0:
+        os.system("xmonad --restart")
+    else:
+        os.system("qtile cmd-obj -o cmd -f restart")

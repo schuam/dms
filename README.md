@@ -1,39 +1,37 @@
 # dms (dmenu scripts)
 
-This repo contains my [dmenu](https://tools.suckless.org/dmenu/) scripts. So
-far, one is written in bash (there might be more in the future), all the rest
-is written in python. For the pythons scipts, I have written a nice little
-wrapper that makes it easy to write new scripts. I started this repo for that
-wrapper and the other python scripts, but at some point I needed a script that
-didn't fit into the shema that the wrapper was designed for. I still wanted to
-keep all my dmenu scripts in one place. Therefore, there are not only python
-scripts, but also (a) bash script(s) in this repo.
+This repo contains my [dmenu](https://tools.suckless.org/dmenu/) scripts. Some
+scripts are written in `bash`, some in `python`. For the pythons scipts, I have
+written a nice little wrapper that makes it easy to write new scripts. I
+started this repo for this wrapper and the other python scripts, but at some
+point I needed a script that didn't fit into the shema that the wrapper was
+designed for. I still wanted to keep all my dmenu scripts in one place.
+Therefore, there are not only python scripts, but also bash scripts in
+this repo.
 
-The rest of this README file talks about the pythons wrapper/scripts. The bash
-script is so simple, it does need further explanations.
+The rest of this README file talks about the python wrapper/scripts. The bash
+scripts are so simple, that they don't need further explanations.
 
 
 ## Background
 
-A little while ago I came across dmenu and started using it as my default
-application launcher. But actually you can do more with it than just
-launching programs. It's actually a 'dynamic menu' which allows you to present
+A little while ago I came across `dmenu` and started using it as my default
+application launcher. But actually you can do a lot more with it than just
+launching programs. It's actually a "dynamic menu" which allows you to present
 a prompt to the user and let them select an option from a list of choices.
 Once the user has made a decision, some action depending on the users decision
 can be triggered. In order to realize such a menu, you have to write a dmenu
 script.
 
-While I liked the idea and what you could do with dmenu, I didn't like to write
-my dmenu scripts in bash, which seems to be what most people do. Of course bash
-is a good solution to do that, it's just that my bash skills are very limited
-and I just hate the syntax of bash. I wanted a way to be able to easily define
-a prompt, the available options to chose from, and the different actions that
-should be taken.
+While I liked the idea and what you could do with `dmenu`, I didn't want to
+write "complicated" scripts to use it. I wanted a way to be able to easily
+define a prompt, the available options to chose from, and the different actions
+that should be taken depending on the selected option.
 
 
 ## Solution
 
-I wrote a simple wrapper around dmenu in python. You can check it out
+I wrote a simple wrapper around `dmenu` in `python`. You can check it out
 [here](./src/python/dmenu_wrapper.py). It contains a function with three
 arguments:
 
@@ -41,9 +39,9 @@ arguments:
 run_dmenu(prompt, choises, script_name=None)
 ```
 
-Now I can use this wrapper to write very simple dmenu scripts in python. Here
-is an example. This example will write a simple text file in your home
-directory with different text in it, depending on which option you chose in
+Now I can use this wrapper to write very simple `dmenu` scripts in `python`.
+Here is an example: This example will write a simple text file in your home
+directory with different texts in it, depending on which option you chose in
 dmenu.
 
 **Warning**: In case you have a file called "example.txt" in your home
@@ -63,7 +61,9 @@ from dmenu_wrapper import run_dmenu
 prompt = "Say hello to: "
 ```
 
-- and the choices the user may chose from (as a dictionary):
+- and the choices the user may chose from as a dictionary (the keys are the
+  options that will be presented to the user, the values are the "actions" that
+  are taken when the corresponding key is chosen):
 
 ```python
 choices = {
@@ -92,7 +92,7 @@ But you definitely need:
 - **python**: Version 3.5 or higher. The wrapper uses the function
               subprocess.run, which was added in python 3.5.
 
-I put my dmenu scripts in a directory that is part of my PATH and setup
+I put my dmenu scripts in a directory that is part of my PATH and set up
 keyboard short cuts to trigger them. But I guess there are other ways to do it.
 Important is, that the wrapper script is in the same directory as the other
 scripts.

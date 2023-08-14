@@ -26,14 +26,14 @@ def _promt_user(prompt, choices):
     return run(dmenu_cmd, shell=True, capture_output=True)
 
 
-def _act_on_users_decision(choices, decision):
+def _act_on_users_decision(choices, decision, script_name=None):
     success = False
     if decision.returncode == 0:
         chosen = decision.stdout.decode("utf-8").rstrip()
 
         if chosen in choices.keys():
             success = True
-            decision = run(choices[chosen], shell=True)
+            run(choices[chosen], shell=True)
         else:
             script = script_name
             if script == None:
@@ -80,5 +80,5 @@ def run_dmenu(prompt, choices, script_name=None):
                   this very file is used instead.
     """
     decision = _promt_user(prompt, choices)
-    return _act_on_users_decision(choices, decision)
+    return _act_on_users_decision(choices, decision, script_name)
 

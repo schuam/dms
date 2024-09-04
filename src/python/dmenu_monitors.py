@@ -22,6 +22,7 @@ LAYOUT_SCRIPT_PATHS = [
     os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-1.sh".format(HOSTNAME)),
     os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-2.sh".format(HOSTNAME)),
     os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-3.sh".format(HOSTNAME)),
+    os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_mobile-1.sh".format(HOSTNAME)),
     os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-1_external-1_mirror.sh".format(HOSTNAME)),
     os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-0_external-1.sh".format(HOSTNAME)),
     os.path.join(LAYOUT_SCRIPTS_DIR, "{}_internal-0_external-2.sh".format(HOSTNAME)),
@@ -39,10 +40,11 @@ choices = {
     "2. laptop plus one external": LAYOUT_SCRIPT_PATHS[1],
     "3. laptop plus two external": LAYOUT_SCRIPT_PATHS[2],
     "4. laptop plus three external": LAYOUT_SCRIPT_PATHS[3],
-    "5. laptop plus mirror": LAYOUT_SCRIPT_PATHS[4],
-    "6. one external": LAYOUT_SCRIPT_PATHS[5],
-    "7. two external": LAYOUT_SCRIPT_PATHS[6],
-    "8. three external": LAYOUT_SCRIPT_PATHS[7],
+    "5. laptop plus one mobile": LAYOUT_SCRIPT_PATHS[4],
+    "6. laptop plus mirror": LAYOUT_SCRIPT_PATHS[5],
+    "7. one external": LAYOUT_SCRIPT_PATHS[6],
+    "8. two external": LAYOUT_SCRIPT_PATHS[7],
+    "9. three external": LAYOUT_SCRIPT_PATHS[8],
 }
 
 

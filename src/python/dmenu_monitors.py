@@ -39,10 +39,10 @@ choices = {
     "2. laptop plus one external": LAYOUT_SCRIPT_PATHS[1],
     "3. laptop plus two external": LAYOUT_SCRIPT_PATHS[2],
     "4. laptop plus three external": LAYOUT_SCRIPT_PATHS[3],
-    "4. laptop plus mirror": LAYOUT_SCRIPT_PATHS[4],
-    "5. one external": LAYOUT_SCRIPT_PATHS[5],
-    "6. two external": LAYOUT_SCRIPT_PATHS[6],
-    "7. three external": LAYOUT_SCRIPT_PATHS[7],
+    "5. laptop plus mirror": LAYOUT_SCRIPT_PATHS[4],
+    "6. one external": LAYOUT_SCRIPT_PATHS[5],
+    "7. two external": LAYOUT_SCRIPT_PATHS[6],
+    "8. three external": LAYOUT_SCRIPT_PATHS[7],
 }
 
 

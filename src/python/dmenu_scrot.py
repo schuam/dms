@@ -39,7 +39,7 @@ choices = {
     "2. delayed fullscreen": \
             COMMAND_TEMPLATE.format("-d 4", FULLSCREEN_NOTIFICATION),
     "3. selection": \
-            COMMAND_TEMPLATE.format("-s ", SECTION_NOTIFICATION),
+            COMMAND_TEMPLATE.format("-s -f", SECTION_NOTIFICATION),
 }
 
 
